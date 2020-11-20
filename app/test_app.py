@@ -36,7 +36,7 @@ class TestApp(unittest.TestCase):
         test case for crawl(raise an error)
         """
         resp = app.crawl()
-        self.assertEqual(1000000, resp.status_code)
+        self.assertEqual(200, resp.status_code)
         self.html = resp.text
 
 
