@@ -12,6 +12,9 @@ services:
       - "POSTGRES_PASSWORD=password"
       - "POSTGRES_NAME=testdb"
       - "POSTGRES_HOST=db"
+
+    volumes:
+      - ./app:/usr/src/app
     depends_on:
       - db
 

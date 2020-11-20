@@ -31,6 +31,8 @@ jobs:
           if [ -f docker-compose.yml ]; then
             docker-compose --file docker-compose.yml build
             docker-compose --file docker-compose.yml up -d
+            docker-compose exec -T webserver python3 -m unittest
+            
           else
             docker build . --file Dockerfile
           fi
