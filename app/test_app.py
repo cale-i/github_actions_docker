@@ -31,6 +31,14 @@ class TestApp(unittest.TestCase):
         items = app.scrape(self.html)
         self.assertIsNotNone(items)
 
+    def test_raise_error(self):
+        """
+        test case for crawl(raise an error)
+        """
+        resp = app.crawl()
+        self.assertEqual(1000000, resp.status_code)
+        self.html = resp.text
+
 
 if __name__ == "__main__":
     unittest.main()
